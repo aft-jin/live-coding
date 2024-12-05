@@ -1,0 +1,36 @@
+#file: noinspection SpringBootApplicationYaml
+spring:
+  application.name: back-end-live-coding
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: create-drop
+    generate-ddl: true
+    properties:
+      hibernate:
+        format_sql: true
+  sql:
+    init:
+      mode: always
+      encoding: UTF-8
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: debug
+        orm.jdbc.bind: trace
+
+server.port: 80
+
+jwt:
+  secret: ed02bbcb2584664f432da278d334656b4fe1cfbff3bdcd33719d60c2a975dc64
